@@ -1,0 +1,5 @@
+# Production Deployment Recommendation
+
+If this system were to be adapted for true production-scale internet crawling instead of a local academic exercise, the current unified architecture utilizing Python `threading` and `sqlite3` must be significantly decoupled. To scale effectively, the single-machine queue and database should be migrated to a distributed message broker (like Apache Kafka or RabbitMQ) and a distributed NoSQL datastore (such as Cassandra or an ElasticSearch cluster natively suited for document retrieval).
+
+The crawler nodes should be containerized using Docker and orchestrated via Kubernetes. This allows the indexing agents to scale horizontally as independent pods feeding off the message broker without resource contention. Additionally, raw HTTP capabilities should transition to a highly concurrent framework (like asynchronous Rust tools or Go microservices), offloading HTML layout rendering to headless browsers only when absolutely required to uncover JavaScript-rendered links.
