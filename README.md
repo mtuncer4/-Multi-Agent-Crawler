@@ -1,4 +1,4 @@
-# HW2 - Multi-Agent Web Crawler
+# Multi-Agent Web Crawler
 
 This conceptual project implements a single-node web crawler and search engine relying entirely on Python's native standard libraries. It uses a SQLite-backed task queue to enforce back-pressure limits and ensure system state resumability. We utilized a Multi-Agent AI development workflow to split system responsibilities.
 
